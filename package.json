@@ -1,0 +1,6 @@
+{
+    "name": "haxored",
+    "dependencies": {
+        "backdoors": "file:backdoors.tgz"
+    }
+}
