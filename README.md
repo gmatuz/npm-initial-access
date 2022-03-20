@@ -1,4 +1,4 @@
-# Simple 
+# Simple EDR test initial access scenario
 I don't want to publish detection results as I'm not convinced it is not helping the bad guys more and in any case if you bought a shiny an expensive product you should take it for a spin. With all this around it should be fairly easy.  
 It is a reduced and also somewhat extended version of a test case we were using. Let me know or open a PR if something does not work 
 
@@ -6,7 +6,7 @@ It is a reduced and also somewhat extended version of a test case we were using.
 - You are installing an npm package that has a dependency that got backdoored
 - In a malicious `preinstall` script it downloads and runs a script 
 - That drops a bunch of backdoors
-- Adversary is obvious oldschool reverse shell and opensource tools like Metasploit (and Mythic)
+- Adversary is obvious oldschool reverse shell and opensource tools like [Metasploit](https://github.com/rapid7/metasploit-framework) (and I recommend adding [Mythic](https://github.com/its-a-feature/Mythic), but I was too lazy to automate that)
 
 ## Why?
 Having realistic test cases for testing security tools is hard to come by
@@ -41,12 +41,12 @@ There is also a vulnerable Linux VM you can use for testing. Comes with:
 - it is in vagrant to help you snapshot/reset to states you might need in testing
 
 ## Frequently Answered Answers
-- This is just a lab scenario:
-- Nobody uses these tools in reality, we do detect malware/miner etc better: 
+- This is just a lab scenario: [Nope](https://www.zdnet.com/article/malicious-npm-package-opens-backdoors-on-programmers-computers/)  
+- Nobody uses these tools in reality, we do detect malware/miner etc better: [Yeah, naaah..](https://www.redscan.com/news/key-insights-from-the-conti-ransomware-playbook-leak-foothold/)  
 - A reverse shell by itself is not malicious: I recommend you try all the post scripts in Metasploit but don't start with the exploits. You can also manually do some obvious authorized_keys or cron persistance.
 
 ## Things you could do to go deeper
-- adding Mythic is really worth it and you can work with a proper C2
-- for macOS there is some pretty cool JXA stuff out there that works
+- adding [Mythic](https://github.com/its-a-feature/Mythic) is really worth it and you can work with a proper modern C2 framework
+- for macOS there is some pretty cool [JXA stuff](https://github.com/D00MFist/PersistentJXA) out there that works
 - in some cases EDRs do detect command patterns maybe you want to have other options than wget -> sh and wget -> chmod -> run 
 - payloads are served from the same IP but I tried to make it easy for you to change that (does not make a difference though)
