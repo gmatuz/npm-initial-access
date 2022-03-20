@@ -1,5 +1,6 @@
 # Simple 
-I don't want to publish detection results as I'm not convinced it is not helping the bad guys more and in any case if you bought a shiny an expensive product you should take it for a spin. With all this around it should be fairly easy.
+I don't want to publish detection results as I'm not convinced it is not helping the bad guys more and in any case if you bought a shiny an expensive product you should take it for a spin. With all this around it should be fairly easy.  
+It is a reduced and also somewhat extended version of a test case we were using. Let me know or open a PR if something does not work 
 
 ## Scenario
 - You are installing an npm package that has a dependency that got backdoored
@@ -26,11 +27,18 @@ Having realistic test cases for testing security tools is hard to come by
 local: you will need `curl`, `sed` and of course `npm`. Some of the getto reverse shells will fail because of shell syntax/capability/package difference but it should not break script execution
 remote: you will need Metapsloit 
 
-Super simple, but the internet will know your C2 IP:
-1, fork the repo and set the C2 IP in the config file
-2, clone your fork on the C2 and run `setup_and_run_remote.sh`
-3, clone your fork on all your test machines and run `setup_and_run_local.sh`
-Alternatively you can just clone this one and remember to set all configs without making typos
+Super simple, but the internet will know your C2 IP:  
+1, fork the repo and set the C2 IP in the config file  
+2, clone your fork on the C2 and run `setup_and_run_remote.sh`  
+3, clone your fork on all your test machines and run `setup_and_run_local.sh`  
+Alternatively you can just clone this one and remember to set all configs without making typos. 
+
+## Vulnerable box
+There is also a vulnerable linux VM you can use for testing. Comes with: 
+- `npm` installed to run the a backdoored package installation
+- kernel version that has a few privilege escalations that have metasploit modules
+- docker so you can privilege escalate like you would on any developer machine
+- it is in vagrant to help you snapshot/reset to states you might need in testing
 
 ## Frequently Answered Answers
 - This is just a lab scenario:
