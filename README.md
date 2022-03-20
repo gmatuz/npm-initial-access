@@ -24,8 +24,8 @@ Having realistic test cases for testing security tools is hard to come by
 
 ## Setup
 - You will need a test machine(s) where you will be dropping the backdoors (local) and C2 that it will be able to access (remote)
-local: you will need `curl`, `sed` and of course `npm`. Some of the getto reverse shells will fail because of shell syntax/capability/package difference but it should not break script execution
-remote: you will need Metapsloit 
+local: you will need `curl`, `sed`, `bash` and of course `npm`. For some backdoors to work you will need `python`, `php`. Some of the getto reverse shells will fail because of shell syntax/capability/package difference but it should not break script execution. But really just use the vulnerable box for Linux
+remote: you will need Metapsloit (and `ruby` if this does not come with it)
 
 Super simple, but the internet will know your C2 IP:  
 1, fork the repo and set the C2 IP in the config file  
@@ -34,7 +34,7 @@ Super simple, but the internet will know your C2 IP:
 Alternatively you can just clone this one and remember to set all configs without making typos. 
 
 ## Vulnerable box
-There is also a vulnerable linux VM you can use for testing. Comes with: 
+There is also a vulnerable Linux VM you can use for testing. Comes with: 
 - `npm` installed to run the a backdoored package installation
 - kernel version that has a few privilege escalations that have metasploit modules
 - docker so you can privilege escalate like you would on any developer machine
@@ -43,7 +43,7 @@ There is also a vulnerable linux VM you can use for testing. Comes with:
 ## Frequently Answered Answers
 - This is just a lab scenario:
 - Nobody uses these tools in reality, we do detect malware/miner etc better: 
-- A reverse shell by itself is not malicious: I recommend you try all the post scripts in metasploit but don't start with the exploits. You can also manually do some obvious authorized_keys or cron persistance.
+- A reverse shell by itself is not malicious: I recommend you try all the post scripts in Metasploit but don't start with the exploits. You can also manually do some obvious authorized_keys or cron persistance.
 
 ## Things you could do to go deeper
 - adding Mythic is really worth it and you can work with a proper C2
